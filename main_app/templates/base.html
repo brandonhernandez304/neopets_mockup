@@ -14,6 +14,8 @@
             <li><a href="/">&nbsp;&nbsp;Neopets</a></li>
             <li><a href="{% url 'neopets_create' %}">Add a Neopet</a></li>
             <li><a href="{% url 'index' %}">View All My Neopets</a></li>
+            <li><a href="{% url 'toys_create' %}">Add a Toy</a></li>
+            <li><a href="{% url 'toys_index' %}">View All Toys</a></li>
         </ul>
     </header>
     <main class="container">{% block content %} {% endblock %}</main>
