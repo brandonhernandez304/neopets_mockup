@@ -5,7 +5,7 @@
 {% for neopet in neopets %}
 <a href="{% url 'detail' neopet.id %}">
     <div class="card-content">
-        <span class="card-title"> {{ cat.name }} </span>
+        <span class="card-title"><h2> {{ neopet.name }} </h2></span>
         <p> Species: {{ neopet.species}} </p>
         <p> Gender: {{ neopet.gender }}</p>
         <p> Temperament: {{ neopet.temperament }}</p>

@@ -11,15 +11,15 @@
 <body>
     <header>
         <ul>
-            <li>
-                <a href="/">&nbsp;&nbsp;Neopets</a></li>
-            <li><a href="/neopets">View All My Neopets</a></li>
+            <li><a href="/">&nbsp;&nbsp;Neopets</a></li>
+            <li><a href="{% url 'neopets_create' %}">Add a Neopet</a></li>
+            <li><a href="{% url 'index' %}">View All My Neopets</a></li>
         </ul>
     </header>
     <main class="container">{% block content %} {% endblock %}</main>
     <footer>
         <ul>
-            <li><a href="/about">About</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
             <li>All Rights Reserved, &copy; 2022 Neopets &nbsp;</li>
         </ul>
     </footer>

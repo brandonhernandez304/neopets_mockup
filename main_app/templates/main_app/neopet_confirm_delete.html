@@ -1,0 +1,13 @@
+{% extends 'base.html' %}{% block content %}
+<h1>Release Neopet</h1>
+
+<h4> Are you sure you want to release
+    <span class="name-text">{{ object.name}} </span> into the wilds?
+</h4>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Yes, run free!" class="btn" />
+    <a href="{% url 'detail' neopet.id %}">Nevermind, I'll miss them!</a>
+</form>
+{% endblock %}
