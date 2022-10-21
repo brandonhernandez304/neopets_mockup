@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('neopets/', views.neopets_index, name='index'),
+    path('neopets/<int:neopet_id>/', views.neopets_detail, name='detail'),
 ]

@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Neopet Details</h1>
+
+<div class="card">
+    <div class="card-content">
+        <span class ="card-title">{{ neopet.name }}</span>
+        <p> Species: {{ neopet.species }}</p>
+        <p> Temperament: {{ neopet.temperament }}</p>
+        <p> Gender: {{ neopet.gender }} </p>
+    </div>
+</div>
+{% endblock %}

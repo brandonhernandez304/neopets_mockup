@@ -1,24 +1,22 @@
-from unicodedata import name
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Neopet
+
 # Create your views here.
 
 
 def home(request):
-    return HttpResponse("<h1>Yo yo it's neopets<h1>")
+    return render(request, "home.html")
 
 def about(request):
     return render(request,"about.html")
 
 def neopets_index(request):
+    neopets = Neopet.objects.all()
     return render(request, 'neopets/index.html', {'neopets': neopets })
-# Classes
-class Neopet:
-    def __init__(self, name, species, gender, temperament):
-        self.name = name
-        self.species = species
-        self.gender = gender
-        self.temperament = temperament
+
+def neopets_detail(request, neopet_id):
+    neopet = Neopet.objects.get(id=neopet_id)
+    return render(request, 'neopets/detail.html', {'neopet': neopet})
 
 neopets = [
     Neopet('Slatty', 'Skeith', 'Male', 'Very Friendly'),
