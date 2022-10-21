@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% block content%}
+
+<h1>Neopets List</h1>
+
+{% for neopet in neopets %}
+<span> {{ cat.name }} </span>
+<p> Species: {{ neopet.species}} </p>
+<p> Gender: {{ neopet.gender }}</p>
+<p> Temperament: {{ neopet.temperament }}</p>
+
+{% endfor %}{% endblock %}
