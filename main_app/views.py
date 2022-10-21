@@ -47,7 +47,7 @@ def add_feeding(request, neopet_id):
 def assoc_toy(request, neopet_id, toy_id):
   # Note that you can pass a toy's id instead of the whole object
    Neopet.objects.get(id=neopet_id).toys.add(toy_id)
-   return redirect('detail', cat_id=neopet_id)
+   return redirect('detail', neopet_id=neopet_id)
 # toys #
 
 # CBV's

@@ -15,6 +15,10 @@ class Toy(models.Model):
 
     def get_absolute_url(self):
         return reverse('toys_detail', kwargs={'pk': self.id})
+    
+    def __str__(self):
+        return self.name
+
 
 class Neopet(models.Model):
     name = models.CharField(max_length=30)
