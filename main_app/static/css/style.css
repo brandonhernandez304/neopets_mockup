@@ -1,3 +1,9 @@
+/* this is font found from neopets website */
+/* 
+*{
+  font-family:'Lato';
+} */
+/* BASE */
 body {
     display: flex;
     min-height: 100vh;
