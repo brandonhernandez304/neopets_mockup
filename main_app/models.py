@@ -13,6 +13,7 @@ MEALS = (
 class Toy(models.Model):
     name = models.CharField(max_length=25)
     color = models.CharField(max_length=50)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def get_absolute_url(self):
         return reverse('toys_detail', kwargs={'pk': self.id})
@@ -46,6 +47,8 @@ class Feeding(models.Model):
     )
     # neopet_id FK
     neopet = models.ForeignKey(Neopet, on_delete=models.CASCADE)
+    # toy_id FK
+    toy = models.ForeignKey(Toy, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.get_meal_display()} on {self.date}"

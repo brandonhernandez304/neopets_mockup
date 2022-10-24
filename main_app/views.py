@@ -24,6 +24,7 @@ def neopets_index(request):
     neopets = Neopet.objects.filter(user=request.user)
     return render(request, 'neopets/index.html', {'neopets': neopets })
 
+
 @login_required
 def neopets_detail(request, neopet_id):
     neopet = Neopet.objects.get(id=neopet_id)
@@ -60,7 +61,7 @@ class NeopetCreate(LoginRequiredMixin,CreateView):
     # success_url= '/neopets/'
     def form_valid(self, form):
     # Assign the logged in user (self.request.user)
-        form.instance.user = self.request.user  # form.instance is the cat
+        form.instance.user = self.request.user  # form.instance is the neopet
     # Let the CreateView do its job as usual
         return super().form_valid(form)
 
@@ -77,6 +78,12 @@ class NeopetDelete(LoginRequiredMixin,DeleteView):
 class ToyCreate(LoginRequiredMixin,CreateView):
     model = Toy
     fields = ('name', 'color')
+    def form_valid(self, form):
+    # Assign the logged in user (self.request.user)
+        form.instance.user = self.request.user  # form.instance is the toy
+    # Let the CreateView do its job as usual
+        return super().form_valid(form)
+
 class ToyUpdate(LoginRequiredMixin,UpdateView):
     model = Toy
     fields = ('name', 'color')
@@ -89,10 +96,18 @@ class ToyDetail(LoginRequiredMixin,DetailView):
     model = Toy
     template_name = 'toys/detail.html'
 
-class ToyList(LoginRequiredMixin,ListView):
-    model = Toy
-    template_name = 'toys/index.html'
+# class ToyList(LoginRequiredMixin,ListView):
+#     model = Toy
+#     template_name = 'toys/index.html'
+    
+def toys_index(request):
+    toys = Toy.objects.filter(user=request.user)
+    return render(request, 'toys/index.html', {'toys': toys })
 
+
+
+#################################################################
+# Signup code, just google or look at md for reference
 def signup(request):
   error_message = ''
   if request.method == 'POST':

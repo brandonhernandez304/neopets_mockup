@@ -3,7 +3,7 @@
 {% block content %}
 
 <h1>Toys List</h1>
-{% for toy in object_list %}
+{% for toy in toys %}
 <div class="card">
     <a href="{% url 'toys_detail' toy.id %}">
         <div class="card-content">
