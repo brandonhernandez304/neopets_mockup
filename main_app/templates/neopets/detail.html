@@ -16,8 +16,8 @@
                 <p> Gender: {{ neopet.gender }} </p>
             </div>
             <div class="card-action">
-                <a href="{% url 'neopets_update' neopet.id %}">Edit</a>
-                <a href="{% url 'neopets_delete' neopet.id %}">Delete</a>
+                <a href="{% url 'neopets_update' neopet.id %}">Change Some Details</a>
+                <a href="{% url 'neopets_delete' neopet.id %}">Set Free!</a>
             </div>
         </div>
     </div>
@@ -79,7 +79,7 @@
             <div class="card-action">
                 <form action="{% url 'assoc_toy' neopet.id toy.id %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" class="waves-effect btn #ffab00 amber accent-4">Add</button>
+                    <button type="submit" class="waves-effect btn #ffab00 amber accent-4">Give</button>
                 </form>
             </div>
         </div>
