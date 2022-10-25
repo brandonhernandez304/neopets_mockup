@@ -7,7 +7,7 @@
 
 <form action="" method="POST">
     {% csrf_token %}
-    <input type="submit" value="Yes, run free!" class="btn" />
-    <a href="{% url 'detail' neopet.id %}">Nevermind, I'll miss them!</a>
+    <input type="submit" value="Yes, run free!" class="btn  waves-effect waves-light" />
+    <a class="btn orange waves-effect waves-light" href="{% url 'detail' neopet.id %}">Nevermind, I'll miss them!</a>
 </form>
 {% endblock %}

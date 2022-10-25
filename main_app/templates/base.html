@@ -16,7 +16,10 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+
+    <!-- icon library for links -->
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
     <!-- link to static css -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
@@ -25,25 +28,25 @@
     <header class="navbar-fixed">
         <nav>
             <div class="nav-wrapper #fff9c4 yellow lighten-4">
-                    <ul>
-                        <li>
-                            <a href="/" class="left brand-logo black-text">&nbsp;&nbsp;Neopets</a>
-                        </li>
-                    </ul>
-                    <ul class="right black-text">
-                        <li><a class ="black-text" href="{% url 'about' %}">About</a></li>
-                        {% if user.is_authenticated %}
-                        <li><a class ="black-text" href="{% url 'toys_create' %}">Add a Toy</a></li>
-                        <li><a class ="black-text" href="{% url 'toys_index' %}">View All Toys</a></li>
-                        <li><a class ="black-text" href="{% url 'neopets_create' %}">Add a Neopet</a></li>
-                        <li><a class ="black-text" href="{% url 'index' %}">View All My Neopets</a></li>
-                        <li><a class ="black-text" href="{% url 'logout' %}">Log Out</a></li>
-                        {% else %}
-                        <li><a class ="black-text" href="{% url 'signup' %}">Sign Up</a></li>
-                        <li><a class ="black-text" href="{% url 'login' %}">Log In</a></li>
-                        {% endif %}
-                    </ul>
-                </div>
+                <ul>
+                    <li>
+                        <a href="/" class="left brand-logo black-text" id="neopet-logo">&nbsp;&nbsp;<img src="https://images.neopets.com/themes/h5/basic/images/v3/np-logo-R.svg"></a>
+                    </li>
+                </ul>
+                <ul class="right black-text">
+                    <li><a class="black-text" href="{% url 'about' %}">About</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a class="black-text" href="{% url 'toys_create' %}">Add a Toy</a></li>
+                    <li><a class="black-text" href="{% url 'toys_index' %}">View All Toys</a></li>
+                    <li><a class="black-text" href="{% url 'neopets_create' %}">Add a Neopet</a></li>
+                    <li><a class="black-text" href="{% url 'index' %}">View All My Neopets</a></li>
+                    <li><a class="black-text" href="{% url 'logout' %}">Log Out</a></li>
+                    {% else %}
+                    <li><a class="black-text" href="{% url 'signup' %}">Sign Up</a></li>
+                    <li><a class="black-text" href="{% url 'login' %}">Log In</a></li>
+                    {% endif %}
+                </ul>
+            </div>
             </span>
         </nav>
     </header>
@@ -52,8 +55,23 @@
         {% endblock %}
     </main>
     <footer class="page-footer #e3f2fd yellow lighten-4">
-        <div class="right black-text">
-            All Rights Reserved, &copy; 2022 Neopets &nbsp;
+        <div class="container">
+            <section class="mb-4">
+                <!-- Linkedin -->
+                <a class="btn btn-primary btn-floating waves-effect waves-light" id="linkedin"
+                    href="https://www.linkedin.com/in/brandon-a-hernandez"><i
+                        class="fab fa-linkedin-in"></i></a>
+                        <!-- try putting image instead i tag for icon, name image class so can css it -->
+                <!-- Github -->
+                <a class="btn btn-primary btn-floating waves-effect waves-light" id="github"
+                    href="https://github.com/brandonhernandez304/neopets_mockup" >
+                    <i class="fab fa-github"></i></a>
+            </section>
+            <div class="right black-text">
+                All Rights Reserved, &copy; 2022 Neopets &nbsp;
+            </div>
+
+            </section>
         </div>
     </footer>
 </body>

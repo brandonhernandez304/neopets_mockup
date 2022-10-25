@@ -24,7 +24,25 @@ body {
     min-height: 100vh;
     flex-direction: column;
     background-size: 90%;
-    
 }
 
+#linkedin {
+  border-radius: 50%;
+  background-color: #08d50ca4;
+  border: none;
+}
+
+#github {
+  border-radius: 50%;
+  background-color: #333333;
+  border: none;
+}
+
+#linkedin:hover {
+  box-shadow: 0 0 12px #08d50ca4;
+}
+
+#github:hover {
+  box-shadow: 0 0 12px #333333;
+}
 /* Home */

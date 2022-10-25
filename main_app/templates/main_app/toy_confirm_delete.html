@@ -10,8 +10,8 @@
 
 <form action="" method="post">
     {% csrf_token %}
-    <input class="btn red" type="submit" value="Yes - Delete">
-    <a class="btn blue" href="{% url 'detail' object.id %}">Cancel</a>
+    <input class="btn red waves-effect waves-light" type="submit" value="Yes - Delete">
+    <a class="btn blue waves-effect waves-light" href="{% url 'detail' object.id %}">Cancel</a>
 </form>
 
 {% endblock %}
