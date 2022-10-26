@@ -47,8 +47,8 @@ class Feeding(models.Model):
     )
     # neopet_id FK
     neopet = models.ForeignKey(Neopet, on_delete=models.CASCADE)
-    # toy_id FK
-    toy = models.ForeignKey(Toy, on_delete=models.CASCADE)
+    
+    
 
     def __str__(self):
         return f"{self.get_meal_display()} on {self.date}"
