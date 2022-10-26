@@ -31,6 +31,6 @@ For this app, I dove into django and brought out just a bit of my childhood memo
 ## <a name="deployment"></a>Deployed App
 * [Deployed link](https://neopets-ga-proj4.herokuapp.com/)
 
-## <a name="deployment"></a>Deployed App
+## <a name="futureplans"></a>Future Plans
 * Would like to implement 3rd party API for data collection of neopets, so that when species is searched by the user, the associated image can be displayed on neopets card
 * Once above is done, having a search field or database display of all neopets visually for users to pick their neopet would be the next step
